@@ -27,7 +27,7 @@ The project is divided into two main parts:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/exclusiveabhi/react-chatting-app.git
+   git clone https://github.com/exclusiveabhi/chatting-app.git
    ```
 
 2. **Navigate to the Project Directory**
@@ -117,4 +117,4 @@ To contribute to **ChatFusion**, please follow these steps:
 
 ## Contact
 
-For any questions or feedback, please open an issue on the [GitHub repository](https://github.com/exclusiveabhi/react-chatting-app.git).
+For any questions or feedback, please open an issue on the [GitHub repository](https://github.com/exclusiveabhi/chatting-app.git).
