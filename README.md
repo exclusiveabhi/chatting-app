@@ -20,7 +20,7 @@ The project is divided into two main parts:
 
 ### Prerequisites
 
-- **Node.js** (v14 or later) and **npm** (v6 or later) installed on your machine.
+- **Node.js** (v22.0 or above) and **npm** (v6 or later) installed on your machine.
 
 ### Installation
 
