@@ -1,13 +1,13 @@
 # ChatFusion
 
-**ChatFusion** is a modern chatting app built with React for the frontend and Node.js for the backend. The app allows users to add contacts, create groups, and engage in real-time conversations.
+**ChatFusion** is a modern chatting app built with React for the frontend and Node.js for the backend. The web app allows users to add another user, create groups, and engage in real-time conversations.
 
 ## Features
 
 - **User Management:** Add and manage users.
 - **Group Creation:** Create and manage groups.
 - **Real-Time Chat:** Engage in real-time messaging.
-- **User-Friendly Interface:** Intuitive UI for a seamless experience.
+- **User-Friendly Interface:** Smooth UI for a seamless experience.
 
 ## Project Structure
 
@@ -82,11 +82,11 @@ The project is divided into two main parts:
    npm start
    ```
 
-   The backend server will be running on `http://localhost:5000` (or any other port specified in your configuration).
+   The backend server will be running on `http://localhost:4000` (or any other port specified in your configuration).
 
 ## Usage
 
-1. **Frontend:** Access the React app and interact with the user interface to manage users and groups.
+1. **Frontend:** Access the React app and interact with the user interface to manage groups.
 2. **Backend:** Handles API requests and real-time communication for the chat application.
 
 ## Contributing
