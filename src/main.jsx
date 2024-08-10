@@ -18,16 +18,17 @@ const router = createBrowserRouter([
     
     element: <App> </App>,
     children:[
+     
       {
-        path: "/", //iska mtlb hai agar / route pr jaoge to <Home/> component load hona chaiyee!
-        element: <Home></Home>
-      },
-      {
-        path: "/dashboard",
+        path: "/dashboard", //iska mtlb hai agar /dashboard route pr jaoge to <Home/> component load hona chaiyee!
         element: <Dashboard></Dashboard>
       }
 
     ]
+  },
+  {
+    path: "/", 
+    element: <Home></Home>
   },
   {
     path: "/auth/sign-in",
