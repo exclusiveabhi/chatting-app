@@ -118,4 +118,4 @@ If you would like to contribute to **ResumeCraft**, please follow these steps:
 
 ## Contact
 
-For any questions or feedback, please open an issue on the [GitHub repository](https://github.com/exclusiveabhi/ai-resume-builder.git).
+For any questions or feedback, please open an issue on the [GitHub repository](https://github.com/exclusiveabhi/ai-resume-builder/issues).
