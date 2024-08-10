@@ -1,39 +1,40 @@
-# ChatFusion
+# ResumeCraft
 
-**ChatFusion** is a modern chatting app built with React for the frontend and Node.js for the backend. The web app allows users to add another user, create groups, and engage in real-time conversations.
+**ResumeCraft** is an AI-powered resume builder designed to help users create professional, customized resumes with ease. By leveraging AI, ResumeCraft ensures that each resume is tailored to highlight the user’s skills, experience, and achievements effectively.
 
 ## Features
 
-- **User Management:** Add and manage users.
-- **Group Creation:** Create and manage groups.
-- **Real-Time Chat:** Engage in real-time messaging.
-- **User-Friendly Interface:** Smooth UI for a seamless experience.
+- **AI-Powered Suggestions:** Receive intelligent recommendations to optimize your resume.
+- **Customizable Templates:** Choose from a variety of professional resume templates.
+- **Skill Matching:** Highlight skills that match the job description.
+- **Real-Time Editing:** Make edits and see the changes in real time.
+- **Export Options:** Download your resume in multiple formats (PDF, Word).
 
 ## Project Structure
 
 The project is divided into two main parts:
 
-- **Frontend:** The React application for user interaction and interface.
-- **Backend:** The Node.js server for handling data and real-time communication.
+- **Frontend:** The React application that provides the user interface and handles user interactions.
+- **Backend:** The Node.js server that manages data processing and AI functionality.
 
 ## Getting Started
 
 ### Prerequisites
 
-- **Node.js** (v22.0 or above) and **npm** (v6 or later) installed on your machine.
+- **Node.js** (v22.0 or later) and **npm** (v6 or later) installed on your machine.
 
 ### Installation
 
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/exclusiveabhi/chatting-app.git
+   git clone https://github.com/exclusiveabhi/ai-resume-builder.git
    ```
 
 2. **Navigate to the Project Directory**
 
    ```bash
-   cd react-chatting-app
+   cd ai-resume-builder
    ```
 
 ### Frontend Setup
@@ -53,7 +54,7 @@ The project is divided into two main parts:
 3. **Start the Frontend Development Server**
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    The frontend app will be running on `http://localhost:3000`.
@@ -79,19 +80,19 @@ The project is divided into two main parts:
 4. **Start the Backend Server**
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    The backend server will be running on `http://localhost:4000` (or any other port specified in your configuration).
 
 ## Usage
 
-1. **Frontend:** Access the React app and interact with the user interface to manage groups.
-2. **Backend:** Handles API requests and real-time communication for the chat application.
+1. **Frontend:** Access the app through the browser and start building your resume by selecting templates and filling out personal details.
+2. **Backend:** The backend processes data, runs AI algorithms to provide suggestions, and manages the export of resumes.
 
 ## Contributing
 
-To contribute to **ChatFusion**, please follow these steps:
+If you would like to contribute to **ResumeCraft**, please follow these steps:
 
 1. **Fork the Repository**
 2. **Create a New Branch**
@@ -117,4 +118,4 @@ To contribute to **ChatFusion**, please follow these steps:
 
 ## Contact
 
-For any questions or feedback, please open an issue on the [GitHub repository](https://github.com/exclusiveabhi/chatting-app.git).
+For any questions or feedback, please open an issue on the [GitHub repository](https://github.com/exclusiveabhi/ai-resume-builder.git).
