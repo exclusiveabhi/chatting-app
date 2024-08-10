@@ -6,6 +6,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signin from "./auth/sign-in/Signin.jsx"; //file name changed hai!
 import Home from "./home/Home.jsx"
 import Dashboard from "./dashboard/Dashboard.jsx";
+import {ClerkProvider} from "@clerk/clerk-react"
+
+//sign in key of clerk!
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 //router yaha hai!
 
@@ -33,6 +37,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
     <RouterProvider router={router}></RouterProvider>
+    </ClerkProvider>
   </StrictMode>
 );
