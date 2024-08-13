@@ -5,13 +5,13 @@ export const initialBasicDetails = {
   profilePicture: "",
   currentJobTitle: "Software Engineer",
   email: "imexclusive@gmail.com",
-  website: "https://hi-madhav.com",
+  website: "",
   phoneNumber: "+91 123-456-7890",
-  location: "Delhi, India",
+  location: "Uttar Pradesh, India",
 };
 
 export const initialEducationDetails = {
-  institute: "Delhi Technological University",
+  institute: "Moradabad Institute Of Technology",
   degree: "B. Tech",
   startDate: "05/2018",
   endDate: "04/2022",
@@ -20,39 +20,39 @@ export const initialEducationDetails = {
 
 export const initialEducationList = [
   {
-    institute: "Delhi Technological University",
+    institute: "Moradabad Institute Of Technology",
     degree: "B. Tech",
-    startDate: "05/2018",
-    endDate: "04/2022",
-    grade: "9.7/10",
+    startDate: "07/2021",
+    endDate: "07/2025",
+    grade: "7.1/10",
   },
   {
-    institute: "Delhi Public Schoool",
+    institute: "Sarang Convent Schoool",
     degree: "Senior Secondary",
-    startDate: "05/2016",
-    endDate: "02/2028",
-    grade: "95.6%",
+    startDate: "05/2019",
+    endDate: "02/2021",
+    grade: "84.7%",
   },
 ];
 
-export const initialLanguages = ["C++", "Python", "JavaScript", "Java"];
-export const initialFrameworks = ["Django", "React.js"];
-export const initialtools = ["Git", "Jenkins", "Docker", "Kubernetes"];
+export const initialLanguages = ["C++", "JavaScript"];
+export const initialFrameworks = [ "React.js"];
+export const initialtools = ["Git", "Jenkins", "Docker", "Jira"];
 
 export const initialAwardList = [
   {
-    name: "Winner CodeMaster",
-    year: "2022",
+    name: "Example....",
+    year: "2024",
     shortDescription: "College hackathon (100+ participants)",
   },
   {
-    name: "Winner KineticTech",
-    year: "2021",
+    name: "Example....",
+    year: "2024",
     shortDescription: "IOT hackathon (150+ participants)",
   },
   {
-    name: "Winner ReactDevSaga",
-    year: "2021",
+    name: "Example....",
+    year: "2024",
     shortDescription: "React hackathon (500+ participants)",
   },
 ];
@@ -86,14 +86,14 @@ export const initialExperienceList = [
     title: "SDE I",
     startDate: "01/2023",
     endDate: "12/2023",
-    description: `Encouraged some development and testing during the SDLC with about 20 team members from different areas. Helped with setting up Cold Fusion, NetWare® Workstation Client-Server Edition (WSCSE), and a bunch of other database stuff. Had some discussions with management and project teams to plan QA according to project timelines and business goals. Found a problem with a mobile app used by over 90 banks, saved them from losing $850K, got promoted early by management.`,
+    description: `Encouraged some development and testing during the SDLC with about 20 team members from different areas. Helped with setting up Cold Fusion, NetWare® Workstation Client-Server Edition (WSCSE), and a bunch of other database stuff. Had some discussions with management and project teams to plan QA according to project timelines and business goals. Found a problem with a mobile app used by over 90 banks, saved them from losing 850K, got promoted early by management.`,
   },
   {
     organisation: "Growth Era Technologies",
     title: "SDE I",
     startDate: "05/2022",
     endDate: "12/2022",
-    description: `Made a dashboard which was kinda useful for my team.. also worked with big data, created new pipelines for better CI/CD, took part in internal hackathon`,
+    description: `Made a dashboard which was kinda useful for my team.. also worked with big data, created new pipelines for better CI/CD, took part in internal ....`,
   },
 ];
 
