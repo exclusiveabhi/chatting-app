@@ -10,7 +10,7 @@ const setup = () => {
   const uri = process.env.NODE_ENV === "test" ? testUri : prodUri;
   // const uri = "mongodb+srv://dev:devpassword@cluster0.yv7pycf.mongodb.net/test?retryWrites=true&w=majority";
   // const uri =
-  //   "mongodb+srv://test:testpassword@cluster0.wp2ntc7.mongodb.net/tailor-my-resume-test-db?retryWrites=true&w=majority";
+  //   "mongodb+srv://test:testpassword@cluster0.wp2ntc7.mongodb.net/Resume Craft-test-db?retryWrites=true&w=majority";
   if (!uri) {
     console.error("Check how to setup env from README.md");
     process.exit(1);

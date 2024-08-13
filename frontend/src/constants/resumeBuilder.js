@@ -1,10 +1,10 @@
 import { initialResumeImageData } from "./imageData";
 
 export const initialBasicDetails = {
-  name: "Madhav Sharma",
-  profilePicture: "https://dummy-image.png",
+  name: "Abhishek Rajpoot",
+  profilePicture: "",
   currentJobTitle: "Software Engineer",
-  email: "madhav.sharma@imagine.com",
+  email: "imexclusive@gmail.com",
   website: "https://hi-madhav.com",
   phoneNumber: "+91 123-456-7890",
   location: "Delhi, India",

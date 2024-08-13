@@ -9,12 +9,12 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email: email });
   if (!user) {
-    return res.status(404).send({ message: "User Not found." });
+    return res.status(404).send({ message: "User Not found !" });
   }
   const passwordIsValid = bcrypt.compareSync(password, user.password);
   if (!passwordIsValid) {
     return res.status(401).send({
-      message: "Invalid Password!",
+      message: "Invalid Password !",
     });
   }
   const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);

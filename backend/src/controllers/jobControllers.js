@@ -37,7 +37,7 @@ export const updateJobById = async (req, res) => {
   if (resumeDetails) {
     const { id } = resumeDetails;
     if (!req.user.resumeIds.includes(id)) {
-      return res.status(403).json({ error: "Unauthorized - Resume does not belong to the current user" });
+      return res.status(403).json({ error: "Unauthorized - Resume does not belong to the current user !" });
     }
     const resumeObject = await Resume.findById(id);
     updateJobDetails.resume = resumeObject;

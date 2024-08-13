@@ -60,7 +60,7 @@ const LandingPage = () => {
       navigate("/home");
     } catch (error) {
       console.error("Login failed", error);
-      setLoginError("Invalid email or password. Please try again.");
+      setLoginError("Invalid email or password. Please try again !");
     }
   };
 
@@ -80,7 +80,7 @@ const LandingPage = () => {
       navigate("/home");
     } catch (error) {
       console.error("Registration failed", error);
-      setRegistrationError("Registration failed. Please try again.");
+      setRegistrationError("Registration failed. Please try again !");
     }
   };
 
@@ -102,7 +102,7 @@ const LandingPage = () => {
           >
             {/* Guest Login Button */}
             <Typography variant="h6" align="center" paragraph>
-              Get hired by top product-based companies now!
+              Get hired by top product-based companies now !
             </Typography>
             <Box mt={2} textAlign="center">
               <Button variant="contained" color="primary" onClick={handleGuestLogin}>
