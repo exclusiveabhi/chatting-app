@@ -1,7 +1,7 @@
 {
-  "name": "tailor-my-resume-server",
+  "name": "resume-craft",
   "version": "1.0.0",
-  "description": "tailor-my-resume",
+  "description": "resume-craft",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,19 +9,19 @@
     "debug": "nodemon --inspect server.js",
     "test": "jest --detectOpenHandles  --forceExit --coverage --silent",
     "test-with-logs": "jest --detectOpenHandles --forceExit",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org ashutosh-p9 --project node-express ./client/build && sentry-cli sourcemaps upload --org ashutosh-p9 --project node-express ./client/build"
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org abhishek-p9 --project node-express ./client/build && sentry-cli sourcemaps upload --org abhishek-p9 --project node-express ./client/build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aashutoshPanda/tailor-my-resume.git"
+    "url": "git+https://github.com/exclusiveabhi/ai-resume-builder.git"
   },
   "keywords": [],
   "author": "Ashutosh Panda",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aashutoshPanda/tailor-my-resume/issues"
+    "url": "https://github.com/exclusiveabhi/ai-resume-builder/issues"
   },
-  "homepage": "https://github.com/aashutoshPanda/tailor-my-resume#readme",
+  "homepage": "https://github.com/exclusiveabhi/ai-resume-builder#readme",
   "dependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
