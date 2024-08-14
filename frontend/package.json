@@ -36,13 +36,13 @@
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
- "scripts": {
+  "scripts": {
   "start": "react-scripts start",
   "build": "react-scripts build && npm run sentry:sourcemaps",
   "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!ui-core)/\" --env=jsdom",
   "eject": "react-scripts eject",
   "test-with-coverage": "npm run test -- --coverage .",
-  "sentry:sourcemaps": "sentry-cli releases new $SENTRY_RELEASE && sentry-cli releases set-commits --auto $SENTRY_RELEASE && sentry-cli releases finalize $SENTRY_RELEASE && sentry-cli sourcemaps upload --url-prefix '~/static/js' --rewrite --org abhishek-p9 --project tailor-my-resume-client ./build"
+  "sentry:sourcemaps": "sentry-cli releases new $SENTRY_RELEASE --org abhishek-p9 --project tailor-my-resume-client && sentry-cli releases set-commits --auto $SENTRY_RELEASE --org abhishek-p9 --project tailor-my-resume-client && sentry-cli releases finalize $SENTRY_RELEASE --org abhishek-p9 --project tailor-my-resume-client && sentry-cli sourcemaps upload --url-prefix '~/static/js' --rewrite --org abhishek-p9 --project tailor-my-resume-client ./build"
 }
 ,
   "eslintConfig": {
