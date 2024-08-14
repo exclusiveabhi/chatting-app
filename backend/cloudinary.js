@@ -1,15 +1,19 @@
-// Require the cloudinary library
+// Require the cloudinary library and dotenv
 import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv";
 
-// Return "https" URLs by setting secure: true
+// Load environment variables from .env file
+dotenv.config();
+
+// Configure Cloudinary with environment variables
 cloudinary.config({
-  cloud_name: "dtsydvdw8",
-  api_key: "368979699725658",
-  api_secret: "2AhSIpg0ij3rgOXhb-5wMZI8hK4",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true,
 });
 
-// Log the configuration
+// Log the configuration (optional, for debugging)
 console.log(cloudinary.config());
 
 /////////////////////////
