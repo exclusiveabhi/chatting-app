@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Container, Grid } from "@mui/material";
-import jsPDF from "jspdf";
+import { PDFDocument } from "pdf-lib";
 import html2canvas from "html2canvas";
 import { FloatingDownloadButton } from "../components/FloatingDownloadButton";
 import { useSelector, useDispatch } from "react-redux";
@@ -37,11 +37,31 @@ const ShareResume = () => {
   const handleDownload = async () => {
     try {
       const input = ref.current;
-      const canvas = await html2canvas(input);
+      const canvas = await html2canvas(input, {
+        scale: 50, // Higher scale for better quality
+        useCORS: true, // Ensure cross-origin resources are used correctly
+      });
+
       const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF();
-      pdf.addImage(imgData, "JPEG", 0, 0);
-      pdf.save(selectedResume.name);
+      const pdfDoc = await PDFDocument.create();
+      const page = pdfDoc.addPage([canvas.width, canvas.height]);
+      const pngImage = await pdfDoc.embedPng(imgData);
+
+      page.drawImage(pngImage, {
+        x: 0,
+        y: 0,
+        width: canvas.width,
+        height: canvas.height,
+      });
+
+      const pdfBytes = await pdfDoc.save();
+      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${selectedResume.name}.pdf`; // Include .pdf extension
+      link.click();
     } catch (error) {
       console.error("Error generating PDF:", error);
     }

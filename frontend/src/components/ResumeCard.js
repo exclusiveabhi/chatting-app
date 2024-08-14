@@ -56,7 +56,7 @@ const ResumeCard = ({ resume }) => {
       dispatch(updateVisibility({ id, visibility: visibilityTypes.public }));
     } catch (error) {
       console.error(error.message);
-      setSnackbarMessage("Failed to make resume public");
+      setSnackbarMessage("Failed to make resume public !");
       setSnackbarOpen(true);
     }
   };
