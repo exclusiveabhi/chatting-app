@@ -42,7 +42,7 @@
   "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!ui-core)/\" --env=jsdom",
   "eject": "react-scripts eject",
   "test-with-coverage": "npm run test -- --coverage .",
-  "sentry:sourcemaps": "sentry-cli releases new $SENTRY_RELEASE --org abhishek-p9 --project tailor-my-resume-client && sentry-cli releases set-commits --auto $SENTRY_RELEASE --org abhishek-p9 --project tailor-my-resume-client && sentry-cli releases finalize $SENTRY_RELEASE --org abhishek-p9 --project tailor-my-resume-client && sentry-cli sourcemaps upload --url-prefix '~/static/js' --rewrite --org abhishek-p9 --project tailor-my-resume-client ./build"
+  "sentry:sourcemaps": "sentry-cli releases new $SENTRY_RELEASE --org $SENTRY_ORG --project $SENTRY_PROJECT --log-level debug && sentry-cli releases set-commits --auto $SENTRY_RELEASE --org $SENTRY_ORG --project $SENTRY_PROJECT --log-level debug && sentry-cli releases finalize $SENTRY_RELEASE --org $SENTRY_ORG --project $SENTRY_PROJECT --log-level debug && sentry-cli sourcemaps upload --url-prefix '~/static/js' --rewrite --org $SENTRY_ORG --project $SENTRY_PROJECT --log-level debug ./build"
 }
 ,
   "eslintConfig": {
