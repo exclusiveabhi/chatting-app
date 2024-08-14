@@ -43,24 +43,24 @@ export const initialAwardList = [
   {
     name: "Example....",
     year: "2024",
-    shortDescription: "College hackathon (100+ participants)",
+    shortDescription: "Your Awards (100+ participants)",
   },
   {
     name: "Example....",
     year: "2024",
-    shortDescription: "IOT hackathon (150+ participants)",
+    shortDescription: "Your Awards (150+ participants)",
   },
   {
     name: "Example....",
     year: "2024",
-    shortDescription: "React hackathon (500+ participants)",
+    shortDescription: "Your Awards (500+ participants)",
   },
 ];
 
 export const initialAward = {
   name: "Winner CodeMaster",
   year: "2022",
-  shortDescription: "College hackathon (100+ participants)",
+  shortDescription: "Your Awards (100+ participants)",
 };
 
 export const initialExperience = {

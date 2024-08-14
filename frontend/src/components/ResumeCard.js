@@ -65,10 +65,10 @@ const ResumeCard = ({ resume }) => {
     try {
       const { _id, lastModified, createdAt, ...currentResumeDetails } = resume;
       await dispatch(addResume({ ...currentResumeDetails, name: `${currentResumeDetails.name} Copy` }));
-      setSnackbarMessage("Resume duplicated successfully.");
+      setSnackbarMessage("Resume duplicated successfully !");
     } catch (error) {
       console.error(error.message);
-      setSnackbarMessage("Failed to duplicate resume.");
+      setSnackbarMessage("Failed to duplicate resume !");
     } finally {
       setSnackbarOpen(true);
     }
