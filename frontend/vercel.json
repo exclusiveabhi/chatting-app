@@ -1,18 +1,8 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "next.config.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "api/**/*.js",
-        "use": "@vercel/node"
-      }
-    ],
     "env": {
-      "REACT_ENV": "PROD",
-      "REACT_APP_FRONTEND_BASE_URL_PROD": "https://tailor-resume-ai.netlify.app",
+      "REACT_ENV": "PRODUCTION",
+      "REACT_APP_FRONTEND_BASE_URL_PROD": "https://ai-resume-craft.vercel.app/",
       "REACT_APP_BACKEND_BASE_URL_PROD": "https://resume-craft-api-v1.onrender.com",
       "REACT_APP_FRONTEND_BASE_URL_LOCAL": "http://localhost:3000",
       "REACT_APP_BACKEND_BASE_URL_LOCAL": "http://localhost:3030",
