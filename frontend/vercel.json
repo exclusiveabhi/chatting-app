@@ -20,10 +20,6 @@
       "REACT_APP_SENTRY_FRONTEND_DSN": "fake://5822d4ffa1a690acdf40c5611d42d8e3@us.sentry.io/4506683019755520",
       "SENTRY_AUTH_TOKEN": "fake=_z+/aJe70/usonXP/ipi+GX3UWCOsSpVhheAN/WjzpoI"
     },
-    "scripts": {
-      "build": "npm run build",
-      "postbuild": "sentry-cli releases new $REACT_APP_SENTRY_FRONTEND_DSN && sentry-cli releases set-commits --auto $REACT_APP_SENTRY_FRONTEND_DSN && sentry-cli releases finalize $REACT_APP_SENTRY_FRONTEND_DSN"
-    },
     "routes": [
       {
         "src": "/(.*)",
