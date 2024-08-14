@@ -31,10 +31,10 @@ const ResumeCard = ({ resume }) => {
   const copyToClipboard = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
-      setSnackbarMessage("Copied to clipboard successfully.");
+      setSnackbarMessage("Copied to clipboard successfully !");
     } catch (error) {
       console.error(error.message);
-      setSnackbarMessage("Failed to copy to clipboard.");
+      setSnackbarMessage("Failed to copy to clipboard !");
     } finally {
       setSnackbarOpen(true);
     }

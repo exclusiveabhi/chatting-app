@@ -25,7 +25,7 @@ const JobsScreen = () => {
       ) : (
         <img
           src={addJobOpeningImage}
-          alt="No job openings available"
+          alt="No job openings available !"
           style={{ width: "50%", height: "auto", marginTop: "24px" }}
         />
       )}

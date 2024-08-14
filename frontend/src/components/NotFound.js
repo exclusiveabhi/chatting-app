@@ -19,7 +19,7 @@ export default function NotFoundView() {
         }}
       >
         <Typography variant="h3" sx={{ mb: 3 }}>
-          Sorry, page not found!
+          Oops, page not found !
         </Typography>
 
         <Typography sx={{ color: "text.secondary" }}>
