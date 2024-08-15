@@ -49,6 +49,8 @@ const LandingPage = () => {
     }
   };
 
+  // console.log(token)
+  // console.log(localStorageKeyAPIToken)
   const handleRegularLogin = async () => {
     try {
       const response = await api.post("/auth/login", {

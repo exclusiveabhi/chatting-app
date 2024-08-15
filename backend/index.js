@@ -50,7 +50,7 @@ app.use(express.urlencoded({ extended: true }));
 // Here we define the api routes
 app.use(routes);
 app.get("/debug-sentry", function mainHandler(req, res) {
-  throw new Error("My first Sentry error!");
+  throw new Error("My first Sentry error !");
 });
 // The error handler must be registered before any other error middleware and after all controllers
 app.use(Sentry.Handlers.errorHandler());
