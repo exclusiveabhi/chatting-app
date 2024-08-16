@@ -1,9 +1,9 @@
 const initialBasicDetails = {
-  name: "Madhav Sharma",
+  name: "Abhishek Rajput",
   profilePicture: "https://dummy-image.png",
   currentJobTitle: "Software Engineer",
   email: "madhav.sharma@imagine.com",
-  website: "https://hi-madhav.com",
+  website: "",
   phoneNumber: "+91 123-456-7890",
   location: "Delhi, India",
 };
