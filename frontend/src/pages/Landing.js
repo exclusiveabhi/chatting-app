@@ -1,4 +1,5 @@
 // src/components/LandingPage.js
+
 import React, { useState, useEffect } from "react";
 import {
   Container,
@@ -21,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const [value, setValue] = useState(0); // Tab index state
-  const [email, setUsername] = useState("");
+  const [email, setEmail] = useState(""); // Changed to setEmail for clarity
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -49,8 +50,6 @@ const LandingPage = () => {
     }
   };
 
-  // console.log(token)
-  // console.log(localStorageKeyAPIToken)
   const handleRegularLogin = async () => {
     try {
       const response = await api.post("/auth/login", {
@@ -62,7 +61,7 @@ const LandingPage = () => {
       navigate("/home");
     } catch (error) {
       console.error("Login failed", error);
-      setLoginError("Invalid email or password. Please try again !");
+      setLoginError("Invalid email or password. Please try again!");
     }
   };
 
@@ -89,7 +88,7 @@ const LandingPage = () => {
       }
     }
   };
-  
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -97,18 +96,10 @@ const LandingPage = () => {
   return (
     <Container maxWidth="lg">
       <Grid container alignItems="center" justifyContent="center" pt={6}>
-        {/* Logo and Title */}
         <Grid item xs={12} md={6}>
-          <Card
-            sx={{
-              p: 5,
-              width: 1,
-              maxWidth: 420,
-            }}
-          >
-            {/* Guest Login Button */}
+          <Card sx={{ p: 5, width: 1, maxWidth: 420 }}>
             <Typography variant="h6" align="center" paragraph>
-              Get hired by top product-based companies now !
+              Get hired by top product-based companies now!
             </Typography>
             <Box mt={2} textAlign="center">
               <Button variant="contained" color="primary" onClick={handleGuestLogin}>
@@ -116,28 +107,25 @@ const LandingPage = () => {
               </Button>
             </Box>
 
-            {/* "OR" Divider */}
             <Divider sx={{ my: 3 }}>
               <Typography variant="body2" sx={{ color: "text.secondary" }}>
                 OR
               </Typography>
             </Divider>
 
-            {/* Tabs for Login and Register */}
             <Tabs value={value} onChange={handleChange} centered>
               <Tab label="Login" />
               <Tab label="Register" />
             </Tabs>
 
-            {/* Login Tab Content */}
             {value === 0 && (
               <>
                 <Box textAlign="center">
                   <TextField
-                    label="email"
+                    label="Email"
                     margin="normal"
                     value={email}
-                    onChange={(e) => setUsername(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </Box>
 
@@ -155,7 +143,6 @@ const LandingPage = () => {
                   <Button variant="contained" color="inherit" onClick={handleRegularLogin}>
                     Log In
                   </Button>
-                  {/* Display login error */}
                   {loginError && (
                     <Box textAlign="center" mt={2}>
                       <Typography variant="body2" color="error">
@@ -167,15 +154,14 @@ const LandingPage = () => {
               </>
             )}
 
-            {/* Register Tab Content */}
             {value === 1 && (
               <>
                 <Box textAlign="center">
                   <TextField
-                    label="email"
+                    label="Email"
                     margin="normal"
                     value={email}
-                    onChange={(e) => setUsername(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </Box>
 
@@ -205,7 +191,6 @@ const LandingPage = () => {
                   <Button variant="contained" color="inherit" onClick={handleRegister}>
                     Register
                   </Button>
-                  {/* Display registration error */}
                   {registrationError && (
                     <Box textAlign="center" mt={2}>
                       <Typography variant="body2" color="error">
@@ -218,7 +203,7 @@ const LandingPage = () => {
             )}
           </Card>
         </Grid>
-        {/* First Column - Portrait Image */}
+
         {!isMobileView && (
           <Grid item xs={12} md={6}>
             <Box mt={4} mb={4} textAlign="center">

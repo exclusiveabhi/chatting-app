@@ -17,6 +17,8 @@ const setup = () => {
   }
 
   mongoose.connect(uri);
+  
+
 
   // Check if the connection was successful
   const db = mongoose.connection;

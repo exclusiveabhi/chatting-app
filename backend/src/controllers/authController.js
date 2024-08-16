@@ -1,47 +1,49 @@
-import User from "../models/UserModel.js";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+// routes/auth.js
 
-/**
- * @desc POST login for a user
- */
-export const login = async (req, res) => {
+import { Router } from 'express';
+const router = Router();
+import User, { findOne } from '../models/User';
+import { sign } from 'jsonwebtoken';
+
+// Register User
+router.post('/auth/register', async (req, res) => {
   const { email, password } = req.body;
-  const user = await User.findOne({ email: email });
-  if (!user) {
-    return res.status(404).send({ message: "User Not found !" });
-  }
-  const passwordIsValid = bcrypt.compareSync(password, user.password);
-  if (!passwordIsValid) {
-    return res.status(401).send({
-      message: "Invalid Password !",
+
+  try {
+    const user = new User({ email, password });
+    await user.save();
+
+    const token = sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: '1h',
     });
-  }
-  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
-  return res.status(200).send({
-    id: user.id,
-    email,
-    token,
-  });
-};
 
-/**
- * @desc POST register for a user
- */
-export const register = async (req, res) => {
-  const { email, password, fullName } = req.body;
-  
-  // Check if the email is already registered
-  const existingUser = await User.findOne({ email });
-  if (existingUser) {
-    return res.status(400).json({ message: "Email is already registered !" });
+    res.status(201).json({ token });
+  } catch (error) {
+    if (error.code === 11000) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+    res.status(500).json({ message: error.message });
   }
-  
-  const salt = await bcrypt.genSalt(10);
-  const encryptedPassword = await bcrypt.hash(password, salt);
-  const { id } = await User.create({ email, password: encryptedPassword, fullName });
-  const token = jwt.sign({ id }, process.env.JWT_SECRET);
-  console.log(process.env.JWT_SECRET)
-  res.status(201).json({ id, email, token });
-};
+});
 
+// Login User
+router.post('/auth/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await findOne({ email });
+    if (!user || !(await user.matchPassword(password))) {
+      return res.status(400).json({ message: 'Invalid email or password' });
+    }
+
+    const token = sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: '1h',
+    });
+
+    res.status(200).json({ token });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+export default router;
