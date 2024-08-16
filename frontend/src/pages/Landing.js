@@ -70,7 +70,7 @@ const LandingPage = () => {
     try {
       if (password !== confirmPassword) {
         setPasswordError("Passwords do not match");
-        return; // Stop the registration process if passwords do not match
+        return;
       }
       setPasswordError("");
       const response = await api.post("/auth/register", {
@@ -82,10 +82,14 @@ const LandingPage = () => {
       navigate("/home");
     } catch (error) {
       console.error("Registration failed", error);
-      setRegistrationError("Registration failed. Please try again !");
+      if (error.response && error.response.status === 400) {
+        setRegistrationError(error.response.data.message);
+      } else {
+        setRegistrationError("Registration failed. Please try again!");
+      }
     }
   };
-
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

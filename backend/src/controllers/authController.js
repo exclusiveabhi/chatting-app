@@ -29,10 +29,19 @@ export const login = async (req, res) => {
  * @desc POST register for a user
  */
 export const register = async (req, res) => {
-  const salt = await bcrypt.genSalt(10);
   const { email, password, fullName } = req.body;
+  
+  // Check if the email is already registered
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return res.status(400).json({ message: "Email is already registered !" });
+  }
+  
+  const salt = await bcrypt.genSalt(10);
   const encryptedPassword = await bcrypt.hash(password, salt);
   const { id } = await User.create({ email, password: encryptedPassword, fullName });
   const token = jwt.sign({ id }, process.env.JWT_SECRET);
+  console.log(process.env.JWT_SECRET)
   res.status(201).json({ id, email, token });
 };
+
