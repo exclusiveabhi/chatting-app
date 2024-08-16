@@ -17,7 +17,7 @@ export default function AbsolutePositionedChip() {
       <Stack direction="row" spacing={1}>
         <Chip
           avatar={<Avatar alt="Natacha" src="https://i.ibb.co/1rwYrys/profile-Pic.jpg" />}
-          label="Made with ❤️ by Abhishek"
+          label="By Abhishek"
           href="https://github.com/exclusiveabhi"
           component="a"
           variant="filled"
