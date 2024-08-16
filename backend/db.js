@@ -27,20 +27,6 @@ const setup = () => {
 
   return db;
 };
-// Remove users with null email
-db.users.deleteMany({ email: null });
-
-// Remove duplicate emails (keeping only one)
-const duplicates = await db.users.aggregate([
-  { $group: { _id: "$email", count: { $sum: 1 }, docs: { $push: "$_id" } } },
-  { $match: { count: { $gt: 1 } } }
-]);
-
-for (const duplicate of duplicates) {
-  // Keep the first document and remove the others
-  duplicate.docs.shift(); 
-  db.users.deleteMany({ _id: { $in: duplicate.docs } });
-}
 
 
 export default setup;
