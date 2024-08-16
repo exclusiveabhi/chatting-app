@@ -2,7 +2,7 @@
 
 import { Router } from 'express';
 const router = Router();
-import User, { findOne } from '../models/User';
+import User, { findOne } from '../models/UserModel';
 import { sign } from 'jsonwebtoken';
 
 // Register User
