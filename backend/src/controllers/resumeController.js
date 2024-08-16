@@ -1,6 +1,7 @@
 // controllers/resumeController.js
 import Resume from "../models/ResumeModel.js";
 import User from "../models/UserModel.js";
+
 import Job from "../models/JobModel.js";
 import { improveResumeWithGPT as improveResumeWithGPT } from "../services/improveWithAI.js";
 import { deleteResumeThumbail, getResumeThumbnail } from "../utils/cloudinary.js";

@@ -2,6 +2,7 @@
  * Resume middleware
  */
 import User from "../models/UserModel.js";
+
 import Resume from "../models/ResumeModel.js";
 
 export const resumeIdExists = async (req, res, next) => {

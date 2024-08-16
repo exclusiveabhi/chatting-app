@@ -1,10 +1,8 @@
-// routes/auth.js
-
 import { Router } from 'express';
-const router = Router();
-import User, { findOne } from '../models/UserModel';
-import { sign } from 'jsonwebtoken';
+import User from '../models/UserModel.js';
+import  sign  from 'jsonwebtoken';
 
+const router = Router();
 // Register User
 router.post('/auth/register', async (req, res) => {
   const { email, password } = req.body;
