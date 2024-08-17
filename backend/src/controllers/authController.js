@@ -1,47 +1,38 @@
-import { Router } from 'express';
-import User from '../models/UserModel.js';
-import  sign  from 'jsonwebtoken';
+import User from "../models/UserModel.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
-const router = Router();
-// Register User
-router.post('/auth/register', async (req, res) => {
+/**
+ * @desc POST login for a user
+ */
+export const login = async (req, res) => {
   const { email, password } = req.body;
-
-  try {
-    const user = new User({ email, password });
-    await user.save();
-
-    const token = sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
-    });
-
-    res.status(201).json({ token });
-  } catch (error) {
-    if (error.code === 11000) {
-      return res.status(400).json({ message: 'Email already exists' });
-    }
-    res.status(500).json({ message: error.message });
+  const user = await User.findOne({ email: email });
+  if (!user) {
+    return res.status(404).send({ message: "User Not found." });
   }
-});
-
-// Login User
-router.post('/auth/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const user = await findOne({ email });
-    if (!user || !(await user.matchPassword(password))) {
-      return res.status(400).json({ message: 'Invalid email or password' });
-    }
-
-    const token = sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
+  const passwordIsValid = bcrypt.compareSync(password, user.password);
+  if (!passwordIsValid) {
+    return res.status(401).send({
+      message: "Invalid Password!",
     });
-
-    res.status(200).json({ token });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
   }
-});
+  const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
+  return res.status(200).send({
+    id: user.id,
+    email,
+    token,
+  });
+};
 
-export default router;
+/**
+ * @desc POST register for a user
+ */
+export const register = async (req, res) => {
+  const salt = await bcrypt.genSalt(10);
+  const { email, password, fullName } = req.body;
+  const encryptedPassword = await bcrypt.hash(password, salt);
+  const { id } = await User.create({ email, password: encryptedPassword, fullName });
+  const token = jwt.sign({ id }, process.env.JWT_SECRET);
+  res.status(201).json({ id, email, token });
+};

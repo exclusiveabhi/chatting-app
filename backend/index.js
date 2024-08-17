@@ -57,7 +57,7 @@ app.use(Sentry.Handlers.errorHandler());
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Hello, MongoDB!");
+  res.send("Running Sucessfully !");
 });
 
 export default app;

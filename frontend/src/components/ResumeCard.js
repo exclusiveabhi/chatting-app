@@ -31,10 +31,10 @@ const ResumeCard = ({ resume }) => {
   const copyToClipboard = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
-      setSnackbarMessage("Copied to clipboard successfully !");
+      setSnackbarMessage("Copied to clipboard successfully.");
     } catch (error) {
       console.error(error.message);
-      setSnackbarMessage("Failed to copy to clipboard !");
+      setSnackbarMessage("Failed to copy to clipboard.");
     } finally {
       setSnackbarOpen(true);
     }
@@ -56,7 +56,7 @@ const ResumeCard = ({ resume }) => {
       dispatch(updateVisibility({ id, visibility: visibilityTypes.public }));
     } catch (error) {
       console.error(error.message);
-      setSnackbarMessage("Failed to make resume public !");
+      setSnackbarMessage("Failed to make resume public");
       setSnackbarOpen(true);
     }
   };
@@ -65,10 +65,10 @@ const ResumeCard = ({ resume }) => {
     try {
       const { _id, lastModified, createdAt, ...currentResumeDetails } = resume;
       await dispatch(addResume({ ...currentResumeDetails, name: `${currentResumeDetails.name} Copy` }));
-      setSnackbarMessage("Resume duplicated successfully !");
+      setSnackbarMessage("Resume duplicated successfully.");
     } catch (error) {
       console.error(error.message);
-      setSnackbarMessage("Failed to duplicate resume !");
+      setSnackbarMessage("Failed to duplicate resume.");
     } finally {
       setSnackbarOpen(true);
     }

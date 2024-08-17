@@ -76,7 +76,7 @@ const ResumeAccordion = () => {
   const handleDeleteEducation = (index) => {
     dispatch(deleteEducation(index));
   };
- 
+
   const handleLanguageChange = (event) => {
     dispatch(updateLanguage(event.target.value));
   };

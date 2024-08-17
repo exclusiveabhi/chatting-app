@@ -28,22 +28,31 @@ const InternshipResumePreview = (props, ref) => {
   const basicDetailsMobile = (
     <>
       <Typography variant="body1">
-        {basicDetails.phoneNumber} | <a href={`mailto:${basicDetails.email}`}>{basicDetails.email}</a> | {basicDetails.location}
+        <a href={`mailto:${basicDetails.email}`}>{basicDetails.email}</a>
       </Typography>
+      <Typography variant="body1">
+        {basicDetails.website ? <a href={basicDetails.website}>{basicDetails.website}</a> : null}
+      </Typography>
+      <Typography variant="body1">{basicDetails.phoneNumber}</Typography>
+      <Typography variant="body1">{basicDetails.location}</Typography>
     </>
   );
 
   const basicDetailsDesktop = (
     <>
       <Typography variant="body1">
-        {basicDetails.phoneNumber} | <a href={`mailto:${basicDetails.email}`}>{basicDetails.email}</a> | {basicDetails.location}
+        <a href={`mailto:${basicDetails.email}`}>{basicDetails.email}</a>{" "}
+        {basicDetails.website ? <a href={basicDetails.website}>{basicDetails.website}</a> : null}{" "}
+      </Typography>
+
+      <Typography variant="body1">
+        {basicDetails.phoneNumber} {basicDetails.location}
       </Typography>
     </>
   );
 
   const isMobile = useMediaQuery("(max-width:600px)");
   const basicDetailComponent = isMobile ? basicDetailsMobile : basicDetailsDesktop;
-
   const educationTable = (
     <TableContainer>
       <Table>
@@ -78,12 +87,26 @@ const InternshipResumePreview = (props, ref) => {
       {/* First Row */}
       <Grid container spacing={3}>
         {/* First Column */}
-        <Grid item md={12}>
-          <Box textAlign="center">
-            <Typography variant="h3" component="div">
-              {basicDetails.name}
-            </Typography> {/* Increased name size */}
-            <Box mt={2}>{basicDetailComponent}</Box> {/* Added margin between name and details */}
+        <Grid item md={9} xs={9}>
+          <Box textAlign="left">
+            <Typography variant="h5">{basicDetails.name}</Typography>
+            <Typography variant="subtitle1" color="primary">
+              {basicDetails.currentJobTitle}
+            </Typography>
+            {basicDetailComponent}
+          </Box>
+        </Grid>
+
+        {/* Second Column */}
+        <Grid item md={3} xs={3} container justifyContent="left">
+          <Box>
+            {basicDetails.profilePicture ? (
+              <Avatar
+                alt={basicDetails.name}
+                src={basicDetails.profilePicture}
+                sx={{ width: 100, height: 100, mb: 2 }}
+              />
+            ) : null}
           </Box>
         </Grid>
       </Grid>
@@ -101,7 +124,6 @@ const InternshipResumePreview = (props, ref) => {
           <Grid item>{educationTable}</Grid>
         </Grid>
       </Grid>
-
       {/* Third Row */}
       <Grid container spacing={3}>
         {/* First Column */}

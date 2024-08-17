@@ -1,7 +1,6 @@
 // controllers/resumeController.js
 import Resume from "../models/ResumeModel.js";
 import User from "../models/UserModel.js";
-
 import Job from "../models/JobModel.js";
 import { improveResumeWithGPT as improveResumeWithGPT } from "../services/improveWithAI.js";
 import { deleteResumeThumbail, getResumeThumbnail } from "../utils/cloudinary.js";
@@ -9,7 +8,7 @@ import { deleteResumeThumbail, getResumeThumbnail } from "../utils/cloudinary.js
 // Create a new resume
 export const createResume = async (req, res) => {
   if (!req.body.imgData && !req.body.thumbnail) {
-    return res.status(400).json({ error: "Either 'imgData' or 'thumbnail' must be provided !" });
+    return res.status(400).json({ error: "Either 'imgData' or 'thumbnail' must be provided." });
   }
   let thumbnail;
   if (req.body.imgData) {

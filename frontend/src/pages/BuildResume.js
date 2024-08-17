@@ -39,7 +39,7 @@ const ResumeBuilder = () => {
     try {
       dispatch(setLoading(true));
       const input = ref.current;
-      const canvas = await html2canvas(input, { scale: 1.65 });
+      const canvas = await html2canvas(input, { scale: 0.95 });
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "pt", [canvas.width, canvas.height]);
       const pdfWidth = pdf.internal.pageSize.getWidth();

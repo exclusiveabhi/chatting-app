@@ -16,9 +16,9 @@ export default function AbsolutePositionedChip() {
     <div style={chipContainerStyle}>
       <Stack direction="row" spacing={1}>
         <Chip
-          avatar={<Avatar alt="Natacha" src="https://i.ibb.co/1rwYrys/profile-Pic.jpg" />}
+          avatar={<Avatar alt="Natacha" src="https://i.ibb.co/3z8L9vN/profile-pic.jpg" />}
           label="By Abhishek"
-          href="https://github.com/exclusiveabhi"
+          href="https://github.com/aashutoshPanda"
           component="a"
           variant="filled"
           //   color="primary"

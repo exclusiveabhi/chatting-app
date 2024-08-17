@@ -31,6 +31,6 @@ export default function AINotification() {
   );
 
   return (
-    <Snackbar open={open} onClose={handleClose} message="Use our AI to make your resume standout !" action={action} />
+    <Snackbar open={open} onClose={handleClose} message="Use our AI to make your resume standout!" action={action} />
   );
 }

@@ -1,5 +1,4 @@
 // src/components/LandingPage.js
-
 import React, { useState, useEffect } from "react";
 import {
   Container,
@@ -22,7 +21,7 @@ import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const [value, setValue] = useState(0); // Tab index state
-  const [email, setEmail] = useState(""); // Changed to setEmail for clarity
+  const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -61,7 +60,7 @@ const LandingPage = () => {
       navigate("/home");
     } catch (error) {
       console.error("Login failed", error);
-      setLoginError("Invalid email or password. Please try again!");
+      setLoginError("Invalid email or password. Please try again.");
     }
   };
 
@@ -69,7 +68,7 @@ const LandingPage = () => {
     try {
       if (password !== confirmPassword) {
         setPasswordError("Passwords do not match");
-        return;
+        return; // Stop the registration process if passwords do not match
       }
       setPasswordError("");
       const response = await api.post("/auth/register", {
@@ -81,11 +80,7 @@ const LandingPage = () => {
       navigate("/home");
     } catch (error) {
       console.error("Registration failed", error);
-      if (error.response && error.response.status === 400) {
-        setRegistrationError(error.response.data.message);
-      } else {
-        setRegistrationError("Registration failed. Please try again!");
-      }
+      setRegistrationError("Registration failed. Please try again.");
     }
   };
 
@@ -96,8 +91,16 @@ const LandingPage = () => {
   return (
     <Container maxWidth="lg">
       <Grid container alignItems="center" justifyContent="center" pt={6}>
+        {/* Logo and Title */}
         <Grid item xs={12} md={6}>
-          <Card sx={{ p: 5, width: 1, maxWidth: 420 }}>
+          <Card
+            sx={{
+              p: 5,
+              width: 1,
+              maxWidth: 420,
+            }}
+          >
+            {/* Guest Login Button */}
             <Typography variant="h6" align="center" paragraph>
               Get hired by top product-based companies now!
             </Typography>
@@ -107,25 +110,28 @@ const LandingPage = () => {
               </Button>
             </Box>
 
+            {/* "OR" Divider */}
             <Divider sx={{ my: 3 }}>
               <Typography variant="body2" sx={{ color: "text.secondary" }}>
                 OR
               </Typography>
             </Divider>
 
+            {/* Tabs for Login and Register */}
             <Tabs value={value} onChange={handleChange} centered>
               <Tab label="Login" />
               <Tab label="Register" />
             </Tabs>
 
+            {/* Login Tab Content */}
             {value === 0 && (
               <>
                 <Box textAlign="center">
                   <TextField
-                    label="Email"
+                    label="email"
                     margin="normal"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </Box>
 
@@ -143,6 +149,7 @@ const LandingPage = () => {
                   <Button variant="contained" color="inherit" onClick={handleRegularLogin}>
                     Log In
                   </Button>
+                  {/* Display login error */}
                   {loginError && (
                     <Box textAlign="center" mt={2}>
                       <Typography variant="body2" color="error">
@@ -154,14 +161,15 @@ const LandingPage = () => {
               </>
             )}
 
+            {/* Register Tab Content */}
             {value === 1 && (
               <>
                 <Box textAlign="center">
                   <TextField
-                    label="Email"
+                    label="email"
                     margin="normal"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </Box>
 
@@ -191,6 +199,7 @@ const LandingPage = () => {
                   <Button variant="contained" color="inherit" onClick={handleRegister}>
                     Register
                   </Button>
+                  {/* Display registration error */}
                   {registrationError && (
                     <Box textAlign="center" mt={2}>
                       <Typography variant="body2" color="error">
@@ -203,7 +212,7 @@ const LandingPage = () => {
             )}
           </Card>
         </Grid>
-
+        {/* First Column - Portrait Image */}
         {!isMobileView && (
           <Grid item xs={12} md={6}>
             <Box mt={4} mb={4} textAlign="center">

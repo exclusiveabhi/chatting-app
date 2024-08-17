@@ -1,7 +1,7 @@
 // src/components/ResumeCard.js
 import React from "react";
 import { Box, Button, Grid, Container, useMediaQuery } from "@mui/material";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { localStorageKeyAPIToken } from "../constants/api";
 import { useTheme } from "@mui/material/styles";

@@ -3,8 +3,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-//open api key yaha hai!
-
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 const improveWithGPT = async (resumeTextList) => {

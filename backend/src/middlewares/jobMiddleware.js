@@ -7,7 +7,7 @@ import Job from "../models/JobModel.js";
 export const jobIdExists = async (req, res, next) => {
   const job = await Job.findById(req.params.id);
   if (!job) {
-    return res.status(404).json({ error: "Job application not found !" });
+    return res.status(404).json({ error: "Job application not found" });
   }
   req.job = job;
   next();
@@ -21,7 +21,7 @@ export const isJobOwner = async (req, res, next) => {
   const currentUser = await User.findById(userId);
 
   if (!currentUser) {
-    return res.status(404).json({ message: "User not found !" });
+    return res.status(404).json({ message: "User not found" });
   }
 
   // Extract job ID from req.params
@@ -33,6 +33,6 @@ export const isJobOwner = async (req, res, next) => {
     next();
   } else {
     // ID is not present, send a 403 Forbidden response
-    res.status(403).json({ message: "Permission denied. You do not have access to this resource !" });
+    res.status(403).json({ message: "Permission denied. You do not have access to this resource." });
   }
 };
