@@ -10,11 +10,21 @@ export const fetchAllResumes = createAsyncThunk("resume/fetchAllResumes", async 
   return response.data;
 });
 
+//yaha error hai !
 export const improveResumeWithGPT = createAsyncThunk("resume/improveWithGPT", async (resume) => {
   const { projectList, experienceList } = resume;
-  const response = await api.post("/resumes/improve", { projectList, experienceList });
+  console.log("Sending data:", { projectList, experienceList });
+  const response = await api.post("/resumes/improve", { projectList, experienceList }, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  // console.log(response.data)
   return response.data;
+  
 });
+
+
 
 export const fetchResumeById = createAsyncThunk("resume/fetchResume", async (id) => {
   if (id === "new") return initialResumeState;
