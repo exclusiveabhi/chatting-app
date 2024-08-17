@@ -57,7 +57,7 @@ app.use(Sentry.Handlers.errorHandler());
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Running Sucessfully !");
+  res.send("Yeah, Running Sucessfully !");
 });
 
 export default app;
