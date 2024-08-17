@@ -60,14 +60,14 @@ const LandingPage = () => {
       navigate("/home");
     } catch (error) {
       console.error("Login failed", error);
-      setLoginError("Invalid email or password. Please try again.");
+      setLoginError("Invalid email or password !");
     }
   };
 
   const handleRegister = async () => {
     try {
       if (password !== confirmPassword) {
-        setPasswordError("Passwords do not match");
+        setPasswordError("Passwords do not match !");
         return; // Stop the registration process if passwords do not match
       }
       setPasswordError("");
@@ -80,7 +80,7 @@ const LandingPage = () => {
       navigate("/home");
     } catch (error) {
       console.error("Registration failed", error);
-      setRegistrationError("Registration failed. Please try again.");
+      setRegistrationError("Registration failed. Please try again !");
     }
   };
 
