@@ -17,7 +17,7 @@
 The project is divided into two main parts:
 
 - **Frontend:** The React application that provides the user interface and handles user interactions.
-- **Backend:** The Node.js server that manages data processing and AI functionality.
+- **Backend:** The Node.js server that manages data processing and AI.
 
 ## Getting Started
 
