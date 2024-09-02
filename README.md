@@ -7,7 +7,7 @@
 ## Features
 
 - **AI-Powered Suggestions:** Receive intelligent recommendations to optimize your resume.
-- **Customizable Templates:** Choose from a variety of professional resume templates.
+- **Customizable Templates:** Choose from a variety of resume templates.
 - **Skill Matching:** Highlight skills that match the job description.
 - **Real-Time Editing:** Make edits and see the changes in real time.
 - **Export Options:** Download your resume in multiple formats (PDF, Word).
