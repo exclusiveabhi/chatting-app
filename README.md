@@ -77,7 +77,7 @@ The project is divided into two main parts:
 
 3. **Configure Environment Variables**
 
-   Create a `.env` file in the `backend` directory and set the required environment variables. Refer to `.env.example` for the required settings.
+   Create a `.env` file in the `backend` directory and set the required environment variables. Refer to `.env.example` for the required details.
 
 4. **Start the Backend Server**
 
