@@ -14,7 +14,7 @@
 
 ## Project Structure
 
-The project is divided into two main parts:
+The project is divided into two parts:
 
 - **Frontend:** The React application that provides the user interface and handles user interactions.
 - **Backend:** The Node.js server that manages data processing.
