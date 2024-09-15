@@ -116,7 +116,7 @@ If you would like to contribute to **ResumeCraft**, please follow these steps:
    git push origin feature/YourFeatureName
    ```
 
-6. **Create a Pull Request**
+6. **Create a PR**
 
 ## Contact
 
