@@ -12,7 +12,7 @@
 - **Real-Time Editing:** Make edits and see the changes in real time.
 - **Export Options:** Download your resume in multiple formats (PDF, Word) currently in pdf only.
 
-## Project Structure
+## Project Structures
 
 The project is divided into two main parts:
 
